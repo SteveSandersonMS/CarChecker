@@ -1,0 +1,125 @@
+﻿@inject IJSRuntime JS
+@inject IStringLocalizer<App> Localize
+@using BlazorInputFile 
+
+<Overlay @ref="overlay" OverlayStyle="Overlay.Style.FullScreen" CssClass="vehicle-note-editor-overlay" OnCloseRequested="Dismiss">
+    <button class="overlay-close" @onclick="Dismiss">✖</button>
+
+    <EditForm EditContext="editContext" OnValidSubmit="SaveAsync">
+        <DataAnnotationsValidator />
+
+        <div class="form-field">
+            <label>@Localize["Location:"]</label>
+            <InputSelect @bind-Value="@formData.Location">
+                @foreach (VehiclePart part in Enum.GetValues(typeof(VehiclePart)))
+                {
+                    <option value="@part">@Localize[part.DisplayName()]</option>
+                }
+            </InputSelect>
+            <ValidationMessage For="() => formData.Location" />
+        </div>
+
+        <div class="form-field">
+            <label>@Localize["Description:"]</label>
+            <InputTextArea @bind-Value="@formData.Text" />
+            <ValidationMessage For="() => formData.Text" />
+        </div>
+
+        <div class="form-field">
+            <label>@Localize["Photo:"]</label>
+
+            <InputFile id="image-picker" OnChange="HandlePhotoSelected" accept="image/*" />
+
+            <label class="text-button" for="image-picker">
+                <img src="@formData.PhotoUrl" class="vehicle-note-photo" />
+                @Localize["Take new"]
+            </label>
+
+            <DamageDetection Image="@formData.PhotoUrl" />
+        </div>
+
+        <div class="toolbar">
+            @if (isExistingItem)
+            {
+                <button type="button" class="toolbar-item" @onclick="DeleteAsync">@Localize["Delete"]</button>
+            }
+
+            <button type="submit" class="toolbar-item toolbar-item-end toolbar-item-bg">@Localize["Save"]</button>
+        </div>
+    </EditForm>
+</Overlay>
+
+@code {
+    [Parameter] public EventCallback OnCommittedEdit { get; set; }
+
+    EditContext editContext;
+    Overlay overlay;
+    InspectionNote formData;
+
+    Vehicle vehicle;
+    InspectionNote vehicleNote;
+    bool isExistingItem;
+
+    public VehicleNoteEditor()
+    {
+        formData = new InspectionNote();
+        editContext = new EditContext(formData);
+    }
+
+    public void Show(Vehicle vehicle, InspectionNote noteToEdit)
+    {
+        this.vehicle = vehicle;
+        this.vehicleNote = noteToEdit;
+        isExistingItem = vehicle.Notes.Contains(noteToEdit);
+        formData.CopyFrom(noteToEdit);
+        editContext.MarkAsUnmodified();
+        overlay.Show();
+    }
+
+    Task CommitEdit()
+    {
+        overlay.Hide();
+        return OnCommittedEdit.InvokeAsync(null);
+    }
+
+    Task DeleteAsync()
+    {
+        vehicle.Notes.Remove(vehicleNote);
+        return CommitEdit();
+    }
+
+    Task SaveAsync()
+    {
+        if (!isExistingItem)
+        {
+            vehicle.Notes.Add(vehicleNote);
+        }
+
+        vehicleNote.CopyFrom(formData);
+        return CommitEdit();
+    }
+
+    async Task Dismiss()
+    {
+        await Task.Yield(); // In case this event triggers other things too (e.g., form edits), let that happen first
+
+        if (!editContext.IsModified() || await JS.InvokeAsync<bool>("confirm", Localize["Discard changes?"].Value))
+        {
+            overlay.Hide();
+        }
+    }
+
+    async Task HandlePhotoSelected(IFileListEntry[] files)
+    {
+        var sourceFile = files.FirstOrDefault();
+        if (sourceFile != null)
+        {
+            // Convert to reasonably-sized JPEG
+            var imageFile = await sourceFile.ToImageFileAsync("image/jpeg", 800, 600);
+
+            // Represent it as a data URL we can display
+            var bytes = await imageFile.ReadAllAsync();
+            formData.PhotoUrl = bytes.ToDataUrl("image/jpeg");
+        }
+    }
+}

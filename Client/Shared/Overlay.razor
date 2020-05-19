@@ -1,0 +1,52 @@
+<div class="overlay @(visible ? "visible" : "")" @onpointerdown="RequestClose">
+    <div class="overlay-contents @CssClass @StyleCssClass" @onpointerdown:stopPropagation>
+        @ChildContent
+    </div>
+</div>
+
+@code {
+    bool visible;
+
+    [Parameter] public Style OverlayStyle { get; set; } = Style.FullScreen;
+    [Parameter] public string CssClass { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public EventCallback OnCloseRequested { get; set; }
+
+    public void Show()
+    {
+        visible = true;
+        StateHasChanged();
+    }
+
+    public void Hide()
+    {
+        visible = false;
+        StateHasChanged(); // Only relevant when invoked externally
+    }
+
+    async Task RequestClose()
+    {
+        // If a callback was provided, call it. Otherwise just close immediately.
+        if (OnCloseRequested.HasDelegate)
+        {
+            await OnCloseRequested.InvokeAsync(null);
+        }
+        else
+        {
+            Hide();
+        }
+    }
+
+    string StyleCssClass => OverlayStyle switch
+    {
+        Style.Top => "overlay-contents-top",
+        Style.FullScreen => "overlay-contents-full",
+        _ => string.Empty
+    };
+
+    public enum Style
+    {
+        Top,
+        FullScreen
+    }
+}

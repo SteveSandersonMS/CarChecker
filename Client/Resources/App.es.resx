@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add Note" xml:space="preserve">
+    <value>Añadir observación</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Atrás</value>
+    <comment>As in "go back"</comment>
+  </data>
+  <data name="Body Front" xml:space="preserve">
+    <value>Carrocería frontal</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Body Front Left" xml:space="preserve">
+    <value>Carrocería frontal izquierda</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Body Front Right" xml:space="preserve">
+    <value>Carrocería frontal derecha</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Body Rear" xml:space="preserve">
+    <value>Carrocería trasera</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Body Rear Left" xml:space="preserve">
+    <value>Carrocería trasera izquierda</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Body Rear Right" xml:space="preserve">
+    <value>Carrocería trasera derecha</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Bonnet" xml:space="preserve">
+    <value>Capó</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Car Checker" xml:space="preserve">
+    <value>Inspector de vehículos</value>
+  </data>
+  <data name="Confidence:" xml:space="preserve">
+    <value>Confianza:</value>
+  </data>
+  <data name="Could not sync. Unsent edits:" xml:space="preserve">
+    <value>Error. Cambios pendientes:</value>
+  </data>
+  <data name="Damaged!" xml:space="preserve">
+    <value>Dañado!</value>
+    <comment>As in, car is damaged</comment>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="Description:" xml:space="preserve">
+    <value>Detalles:</value>
+  </data>
+  <data name="Detect damage" xml:space="preserve">
+    <value>Detectar daños</value>
+  </data>
+  <data name="Detecting..." xml:space="preserve">
+    <value>Detectando...</value>
+    <comment>As in, detecting damage</comment>
+  </data>
+  <data name="Discard changes?" xml:space="preserve">
+    <value>Descartar cambios?</value>
+  </data>
+  <data name="Door Front Left" xml:space="preserve">
+    <value>Puerta Delantera Izquierda</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Door Front Right" xml:space="preserve">
+    <value>Puerta Delantera Derecha</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Door Rear Left" xml:space="preserve">
+    <value>Puerta Trasera Izquierda</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Door Rear Right" xml:space="preserve">
+    <value>Puerta Trasera Derecha</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Empty" xml:space="preserve">
+    <value>Vacío</value>
+  </data>
+  <data name="Enter license number:" xml:space="preserve">
+    <value>Introduzca la matrícula:</value>
+    <comment>License meaning "car registration number" to identify the vehicle</comment>
+  </data>
+  <data name="First, please tap on the part of the vehicle to which the note applies." xml:space="preserve">
+    <value>Primero, pulse en la parte del vehículo aplicable.</value>
+    <comment>Note means "inspection note", i.e., something recorded about the condition of the vehicle</comment>
+  </data>
+  <data name="Full" xml:space="preserve">
+    <value>Lleno</value>
+  </data>
+  <data name="Grill" xml:space="preserve">
+    <value>Parrilla</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Half" xml:space="preserve">
+    <value>50%</value>
+  </data>
+  <data name="Head Light Left" xml:space="preserve">
+    <value>Faro izquierdo</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Head Light Right" xml:space="preserve">
+    <value>Faro derecho</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Last updated:" xml:space="preserve">
+    <value>Última actualizacion:</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>Matrícula</value>
+  </data>
+  <data name="LicenseNumberIncorrectFormat" xml:space="preserve">
+    <value>El formato de la matrícula es incorrecto.</value>
+  </data>
+  <data name="Location:" xml:space="preserve">
+    <value>Ubicación:</value>
+    <comment>Meaning "on which part of the car is the damage located"</comment>
+  </data>
+  <data name="Log in" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="Log out" xml:space="preserve">
+    <value>Cerrar sesión</value>
+  </data>
+  <data name="Manage account" xml:space="preserve">
+    <value>Administrar cuenta</value>
+  </data>
+  <data name="Mileage:" xml:space="preserve">
+    <value>Kilometraje</value>
+    <comment>Mileage recorded on car odometer</comment>
+  </data>
+  <data name="Mirror Left" xml:space="preserve">
+    <value>Retrovisor izquierdo</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Mirror Right" xml:space="preserve">
+    <value>Retrovisor derecho</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Never" xml:space="preserve">
+    <value>Nunca</value>
+    <comment>As in "never updated"</comment>
+  </data>
+  <data name="No notes added." xml:space="preserve">
+    <value>No se añadieron observaciónes.</value>
+    <comment>Note means "inspection note", i.e., something recorded about the condition of the vehicle</comment>
+  </data>
+  <data name="OK - not damaged" xml:space="preserve">
+    <value>OK - sin daños</value>
+  </data>
+  <data name="Photo:" xml:space="preserve">
+    <value>Foto:</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>Reintentar</value>
+  </data>
+  <data name="Roof" xml:space="preserve">
+    <value>Techo</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="Show all" xml:space="preserve">
+    <value>Mostrar todas</value>
+  </data>
+  <data name="Sorry, there is no vehicle with license number '{0}'." xml:space="preserve">
+    <value>Lo sentimos, no hay ningún vehículo con la matrícula '{0}'.</value>
+  </data>
+  <data name="Tail Light Left" xml:space="preserve">
+    <value>Luz trasera izquierda</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Tail Light Right" xml:space="preserve">
+    <value>Luz trasera derecha</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Take new" xml:space="preserve">
+    <value>Tomar nueva</value>
+    <comment>As in "take new photo"</comment>
+  </data>
+  <data name="Tank:" xml:space="preserve">
+    <value>Depósito:</value>
+    <comment>As in "fuel level in the tank". Example: "Tank: Full"</comment>
+  </data>
+  <data name="Undercarriage" xml:space="preserve">
+    <value>Chasis</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Actualizar</value>
+  </data>
+  <data name="Updating..." xml:space="preserve">
+    <value>Actualizando...</value>
+  </data>
+  <data name="Welcome, {0}!" xml:space="preserve">
+    <value>Bienvenido, {0}!</value>
+  </data>
+  <data name="Wheel Arch Front Left" xml:space="preserve">
+    <value>Paso de la rueda frontal izquierda</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Wheel Arch Front Right" xml:space="preserve">
+    <value>Paso de la rueda frontal derecha</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Wheel Arch Rear Left" xml:space="preserve">
+    <value>Paso de la rueda trasera izquierda</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Wheel Arch Rear Right" xml:space="preserve">
+    <value>Paso de la rueda trasera derecha</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Wheel Front Left" xml:space="preserve">
+    <value>Rueda delantera izquierda</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Wheel Front Right" xml:space="preserve">
+    <value>Rueda delantera derecha</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Wheel Rear Left" xml:space="preserve">
+    <value>Rueda trasera izquierda</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Wheel Rear Right" xml:space="preserve">
+    <value>Rueda trasera derecha</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Window Back" xml:space="preserve">
+    <value>Parabrisas trasero</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Window Front Left" xml:space="preserve">
+    <value>Ventana delantera izquierda</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Window Front Right" xml:space="preserve">
+    <value>Ventana delantera derecha</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Window Rear Left" xml:space="preserve">
+    <value>Ventana trasera izquierda</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Window Rear Right" xml:space="preserve">
+    <value>Ventana trasera derecha</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="Windshield" xml:space="preserve">
+    <value>Parabrisas</value>
+    <comment>Name of part of car</comment>
+  </data>
+  <data name="{0} not shown." xml:space="preserve">
+    <value>{0} no mostradas.</value>
+    <comment>example: 3 not shown.</comment>
+  </data>
+</root>

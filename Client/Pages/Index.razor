@@ -1,0 +1,53 @@
+﻿@page "/"
+@attribute [Authorize]
+@inject NavigationManager Navigation
+@inject LocalVehiclesStore LocalVehiclesStore
+@inject IStringLocalizer<App> Localize
+
+<AuthorizeView>
+    <header>
+        <div class="toolbar">
+            <button class="toolbar-item" @onclick="() => loginStatusOverlay.Show()">☰</button>
+        </div>
+        <div class="title">@Localize["Welcome, {0}!", context.User.FirstName()]</div>
+    </header>
+
+    <Overlay @ref="loginStatusOverlay" OverlayStyle="Overlay.Style.Top" CssClass="home-overlay">
+        <LoginStatus />
+    </Overlay>
+</AuthorizeView>
+
+<main class="container">
+    <EditForm class="home-options" Model="this" OnValidSubmit="FindVehicle">
+        <DataAnnotationsValidator />
+
+        <p>@Localize["Enter license number:"]</p>
+        <Autocomplete @bind-Value="@LicenseNumber" Choices="@GetLicenseAutocompleteItems"
+                      OnItemChosen="FindVehicle" class="find-by-license-plate" placeholder="@Localize["License"]" />
+        <ValidationMessage For="() => LicenseNumber" />
+    </EditForm>
+</main>
+
+<footer>
+    <SyncStatus />
+</footer>
+
+@code {
+    Overlay loginStatusOverlay;
+
+    [RegularExpression("[a-zA-Z0-9]+(\\-[a-zA-Z0-9]+)*\\-{0,1}", ErrorMessageResourceType = typeof(Resources.App), ErrorMessageResourceName = nameof(Resources.App.LicenseNumberIncorrectFormat))]
+    public string LicenseNumber { get; set; }
+
+    async Task<IEnumerable<string>> GetLicenseAutocompleteItems(string prefix)
+    {
+        return await LocalVehiclesStore.Autocomplete(prefix);
+    }
+
+    void FindVehicle()
+    {
+        if (!string.IsNullOrEmpty(LicenseNumber))
+        {
+            Navigation.NavigateTo($"vehicle/{Uri.EscapeDataString(LicenseNumber)}");
+        }
+    }
+}

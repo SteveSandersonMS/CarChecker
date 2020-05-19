@@ -1,0 +1,121 @@
+﻿@page "/vehicle/{LicenseNumber}"
+@attribute [Authorize]
+@inject IJSRuntime JS
+@inject LocalVehiclesStore LocalVehiclesStore
+@inject NavigationManager Navigation
+@inject IStringLocalizer<App> Localize
+
+<EditForm EditContext="editContext" @key="LicenseNumber" OnValidSubmit="Save">
+    <ObjectGraphDataAnnotationsValidator />
+
+    <header>
+        <div class="toolbar">
+            <a class="toolbar-item" @onclick="@GoBack">◀ @Localize["Back"]</a>
+        </div>
+        <div class="toolbar">
+            <span class="title">@LicenseNumber</span>
+            @if (editContext.IsModified())
+            {
+                <button type="submit" class="toolbar-item toolbar-item-end toolbar-item-bg">@Localize["Save"]</button>
+            }
+        </div>
+    </header>
+
+    @if (Vehicle != null)
+    {
+        <main class="vehicle-details with-footer">
+            <div class="vehicle-viewer">
+                <SceneView Environment="3d/sky.png"
+                           DisplayObjectUrl="3d/car.json"
+                           SelectedObject="@selectedPart.ToString()"
+                           HighlightObjects="@damagedParts.Select(p => p.ToString())"
+                           OnObjectClicked="SetSelectedPart" />
+
+                <VehicleSummary Vehicle="@Vehicle" />
+            </div>
+            <div class="vehicle-editor">
+                <VehicleNotes Vehicle="@Vehicle" FilterByLocation="@selectedPart"
+                              OnNoteClicked="note => noteEditor.Show(Vehicle, note)"
+                              OnClearFilterRequested="() => { selectedPart = null; }" />
+            </div>
+        </main>
+
+        <footer>
+            <a class="toolbar-item toolbar-item-center" @onclick="@AddNote">
+                @Localize["Add Note"]
+            </a>
+        </footer>
+    }
+    else if (notFound)
+    {
+        <main class="container">
+            @Localize["Sorry, there is no vehicle with license number '{0}'.", LicenseNumber]
+        </main>
+    }
+    else
+    {
+        <main class="container"><div class="loader"></div></main>
+    }
+</EditForm>
+
+<VehicleNoteEditor @ref="noteEditor" OnCommittedEdit="OnNoteEdited" />
+
+@code {
+    EditContext editContext;
+    [ValidateComplexType] public Vehicle Vehicle { get; set; }
+    bool notFound;
+    VehicleNoteEditor noteEditor;
+    VehiclePart? selectedPart;
+    IEnumerable<VehiclePart> damagedParts => Vehicle.Notes.Select(n => n.Location).Distinct();
+
+    [Parameter] public string LicenseNumber { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        editContext = new EditContext(this);
+        editContext.OnFieldChanged += (sender, args) => StateHasChanged();
+
+        Vehicle = await LocalVehiclesStore.GetVehicle(LicenseNumber);
+        notFound = (Vehicle == null);
+    }
+
+    async Task GoBack()
+    {
+        if (!editContext.IsModified() || await JS.InvokeAsync<bool>("confirm", Localize["Discard changes?"].Value))
+        {
+            await JS.InvokeVoidAsync("history.back");
+        }
+    }
+
+    async Task Save()
+    {
+        await LocalVehiclesStore.SaveVehicleAsync(Vehicle);
+        editContext.MarkAsUnmodified();
+        Navigation.NavigateTo(""); // Return to home screen
+    }
+
+    async Task AddNote()
+    {
+        if (selectedPart.HasValue)
+        {
+            noteEditor.Show(Vehicle, new InspectionNote { Location = selectedPart.Value });
+        }
+        else
+        {
+            await JS.InvokeVoidAsync("alert", Localize["First, please tap on the part of the vehicle to which the note applies."].Value);
+        }
+    }
+
+    void OnNoteEdited()
+    {
+        // Switch the edit context into a "modified" state if it isn't already
+        editContext.NotifyFieldChanged(editContext.Field(nameof(Vehicle.Notes)));
+    }
+
+    void SetSelectedPart(string objectName)
+    {
+        selectedPart = Enum.TryParse<VehiclePart>(objectName, out var parsedPart)
+            ? parsedPart
+            : (VehiclePart?)null;
+    }
+}

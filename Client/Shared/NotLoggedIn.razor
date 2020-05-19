@@ -1,0 +1,12 @@
+@inject NavigationManager Navigation
+@inject IStringLocalizer<App> Localize
+
+<header>
+    <span class="title">@Localize["Car Checker"]</span>
+</header>
+
+<main class="container">
+    <a class="login" href="authentication/login?returnUrl=@Uri.EscapeDataString(Navigation.Uri)">
+        @Localize["Log in"]
+    </a>
+</main>

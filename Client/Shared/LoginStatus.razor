@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@inject SignOutSessionStateManager SignOutManager
+@inject NavigationManager Navigation
+@inject LocalVehiclesStore LocalVehiclesStore
+@inject IStringLocalizer<App> Localize
+
+<AuthorizeView>
+    <div class="username">
+        <img src="user.svg" />
+        <div>
+            <div><strong>@context.User.FirstName() @context.User.LastName()</strong></div>
+            <div>@context.User.Email()</div>
+        </div>
+    </div>
+    <div class="user-actions">
+        <a class="text-button" href="authentication/profile">
+            @Localize["Manage account"]
+        </a>
+        <button class="text-button" @onclick="BeginLogOut">
+            @Localize["Log out"]
+        </button>
+    </div>
+</AuthorizeView>
+
+@code {
+    private async Task BeginLogOut()
+    {
+        await SignOutManager.SetSignOutState();
+        await LocalVehiclesStore.SaveUserAccountAsync(null);
+        Navigation.NavigateTo("authentication/logout");
+    }
+}

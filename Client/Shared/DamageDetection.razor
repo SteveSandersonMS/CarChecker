@@ -1,0 +1,64 @@
+﻿@inject HttpClient Http
+@inject IStringLocalizer<App> Localize
+
+@*
+    IMPORTANT NOTE
+    ==============
+    In this repo, we're not including the pretrained ML.NET model that was used in the demo,
+    so the server's damage detection responses are simply random. See DamageDetectionController.cs
+    in the Server project.
+
+    We leave the rest of the damage detection implementation in place here as an example of
+    how user-supplied files can be uploaded to a backend server.
+*@
+
+@if (!string.IsNullOrEmpty(Image))
+{
+    <button @onclick="PerformDamageDetection" class="text-button damage-detection" type="button">@Localize["Detect damage"]</button>
+
+    if (isDetectingDamage)
+    {
+        <div>@Localize["Detecting..."]</div>
+    }
+    else if (damageDetectionResult != null)
+    {
+        if (damageDetectionResult.IsDamaged)
+        {
+            <div class="damaged">
+                <strong>@Localize["Damaged!"]</strong>
+                (@Localize["Confidence:"] @((100 * damageDetectionResult.Score).ToString("0"))%)
+            </div>
+        }
+        else
+        {
+            <div class="not-damaged">
+                <strong>@Localize["OK - not damaged"]</strong>
+                (@Localize["Confidence:"] @((100 * damageDetectionResult.Score).ToString("0"))%)
+            </div>
+        }
+    }
+}
+
+@code {
+    bool isDetectingDamage;
+    DamageDetectionResult damageDetectionResult;
+
+    [Parameter] public string Image { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        isDetectingDamage = false;
+        damageDetectionResult = null;
+    }
+
+    async Task PerformDamageDetection()
+    {
+        isDetectingDamage = true;
+
+        var imageBytes = DataUrl.ToBytes(Image);
+        var response = await Http.PostAsync("api/detectdamage", new ByteArrayContent(imageBytes));
+        damageDetectionResult = await response.Content.ReadFromJsonAsync<DamageDetectionResult>();
+
+        isDetectingDamage = false;
+    }
+}

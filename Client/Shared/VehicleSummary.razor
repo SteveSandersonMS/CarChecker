@@ -1,0 +1,27 @@
+﻿@inject IStringLocalizer<App> Localize
+
+<div class="vehicle-summary">
+    <h3 class="vehicle">
+        <span class="make">@Vehicle.Make</span>
+        <span class="model">@Vehicle.Model</span>
+        <span class="year">@Vehicle.RegistrationDate.Year</span>
+    </h3>
+    <div class="vehicle-summary-fields">
+        <span>@Localize["Mileage:"]</span>
+        <InputNumber @bind-Value="@Vehicle.Mileage" pattern="[0-9]*" inputmode="numeric" />
+
+        <span>@Localize["Tank:"]</span>
+        <InputSelect @bind-Value="@Vehicle.Tank">
+            <option value="@FuelLevel.Empty">@Localize["Empty"]</option>
+            <option value="@FuelLevel.Quarter">25%</option>
+            <option value="@FuelLevel.Half">@Localize["Half"]</option>
+            <option value="@FuelLevel.ThreeQuarters">75%</option>
+            <option value="@FuelLevel.Full">@Localize["Full"]</option>
+        </InputSelect>
+    </div>
+    <ValidationSummary />
+</div>
+
+@code {
+    [Parameter] public Vehicle Vehicle { get; set; }
+}

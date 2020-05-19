@@ -1,0 +1,44 @@
+﻿@inject IStringLocalizer<App> Localize
+
+<div class="vehicle-notes">
+    <ul>
+        @foreach (var note in FilteredNotes)
+        {
+            <li @onclick="() => OnNoteClicked.InvokeAsync(note)">
+                <div class="note">
+                    <h3>@Localize[note.Location.DisplayName()]</h3>
+                    <span>@note.Text</span>
+                </div>
+            </li>
+        }
+    </ul>
+
+    @if (!FilteredNotes.Any() && FilterByLocation.HasValue)
+    {
+        <div class="no-notes">@Localize[FilterByLocation.Value.DisplayName()]</div>
+        <div class="hidden-notes">@Localize["No notes added."]</div>
+    }
+    @{ var excludedNotes = CountExcludedNotes(); }
+    @if (excludedNotes > 0)
+    {
+        <div class="hidden-notes">
+            + @Localize["{0} not shown.", excludedNotes]
+            <button class="text-button" @onclick="OnClearFilterRequested">@Localize["Show all"]</button>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public Vehicle Vehicle { get; set; }
+    [Parameter] public VehiclePart? FilterByLocation { get; set; }
+    [Parameter] public EventCallback<InspectionNote> OnNoteClicked { get; set; }
+    [Parameter] public EventCallback OnClearFilterRequested { get; set; }
+
+    IEnumerable<InspectionNote> FilteredNotes => FilterByLocation.HasValue
+        ? Vehicle.Notes.Where(n => n.Location == FilterByLocation.Value)
+        : Vehicle.Notes;
+
+    int CountExcludedNotes() => FilterByLocation.HasValue
+        ? Vehicle.Notes.Count(n => n.Location != FilterByLocation.Value)
+        : 0;
+}

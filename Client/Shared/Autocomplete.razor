@@ -1,0 +1,64 @@
+﻿@inherits InputText
+
+<input @bind="BoundValue" @bind:event="oninput" @onblur="Hide" autocomplete="off"
+       @attributes="@AdditionalAttributes" class="@CssClass" />
+
+<div role="listbox" class="autocomplete-suggestions @(visible ? "visible" : "")">
+    @foreach (var choice in currentChoices.Take(3))
+    {
+        <div role="option" @onclick="() => ChooseAsync(choice)">@choice</div>
+    }
+</div>
+
+@code {
+    bool visible;
+    string[] currentChoices = Array.Empty<string>();
+
+    [Parameter] public Func<string, Task<IEnumerable<string>>> Choices { get; set; }
+    [Parameter] public EventCallback OnItemChosen { get; set; }
+
+    string BoundValue
+    {
+        get => CurrentValueAsString;
+        set
+        {
+            CurrentValueAsString = value;
+            _ = UpdateAutocompleteOptionsAsync();
+        }
+    }
+
+    async Task UpdateAutocompleteOptionsAsync()
+    {
+        if (EditContext.GetValidationMessages(FieldIdentifier).Any())
+        {
+            // If the input is invalid, don't show any autocomplete options
+            currentChoices = Array.Empty<string>();
+        }
+        else
+        {
+            var valueSnapshot = CurrentValueAsString;
+            var suppliedChoices = (await Choices(valueSnapshot)).ToArray();
+
+            // By the time we get here, the user might have typed other characters
+            // Only use the result if this still represents the latest entry
+            if (CurrentValueAsString == valueSnapshot)
+            {
+                currentChoices = suppliedChoices;
+                visible = currentChoices.Any();
+                StateHasChanged();
+            }
+        }
+    }
+
+    void Hide()
+    {
+        visible = false;
+    }
+
+    Task ChooseAsync(string choice)
+    {
+        CurrentValueAsString = choice;
+        Hide();
+        return OnItemChosen.InvokeAsync(null);
+    }
+}
