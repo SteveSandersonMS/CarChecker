@@ -24,7 +24,7 @@
         "workerSize": "0",
         "workerSizeId": 0,
         "numberOfWorkers": "1",
-        "currentStack": "dotnet",
+        "currentStack": "dotnetcore",
         "netFrameworkVersion": "v4.0",
         "hostingPlanName": "[concat('hpn-', resourceGroup().name)]"
     },
