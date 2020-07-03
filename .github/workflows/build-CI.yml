@@ -1,0 +1,30 @@
+name: Build Blazor App
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    if: github.event_name == 'push' && contains(toJson(github.event.commits), '***NO_CI***') == false && contains(toJson(github.event.commits), '[ci skip]') == false && contains(toJson(github.event.commits), '[skip ci]') == false
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.300
+
+    - name: Restore
+      run: dotnet restore
+
+    - name: Build with dotnet
+      run: dotnet build --configuration Release --no-restore
+    
+    - name: Publish with dotnet
+      run: dotnet publish --configuration Release -o published_app --no-build
+    
+    - name: Publish artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: webapp
+        path: published_app

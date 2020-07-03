@@ -1,0 +1,6 @@
+{  
+    "extensions": [
+        "ms-vscode.csharp",
+        "formulahendry.dotnet-test-explorer"
+    ]
+  }
