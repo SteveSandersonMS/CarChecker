@@ -1089,6 +1089,390 @@
 				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
 			},
 			{
+				"uuid": "2CC93E7D-EA5B-41FA-8721-F064CA1A0DFB",
+				"type": "Mesh",
+				"name": "WheelArchFrontLeft",
+				"userData": {
+					"name": "WheelArchFrontLeft"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "9A005750-8940-4336-A73D-77F22BF6A8D1",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "B57B5745-7261-4907-8639-D7A165495214",
+				"type": "Mesh",
+				"name": "WheelArchFrontRight",
+				"userData": {
+					"name": "WheelArchFrontRight"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "92D572EA-C199-48DA-97EB-D79C8D124F01",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "91BAA4FC-4C6E-4ACE-A9DB-CBE72026DA39",
+				"type": "Mesh",
+				"name": "Undercarriage",
+				"userData": {
+					"name": "Undercarriage"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "88AF1259-AFD0-420F-A2CE-ED4777707D74",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "5624D7F5-1B62-4EC2-B644-B66C79DD7912",
+				"type": "Mesh",
+				"name": "BodyFront",
+				"userData": {
+					"name": "BodyFront"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "F83AE24F-8210-417A-9EEB-4ABA6C392076",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "B1C3CDA7-D1FB-4D5D-98ED-CE362048F97B",
+				"type": "Mesh",
+				"name": "BodyFrontLeft",
+				"userData": {
+					"name": "BodyFrontLeft"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "D21CDCA5-BB9F-450E-95F9-1641ADD91198",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "64668B7F-8B56-4C42-BEF9-90C217D2FC8C",
+				"type": "Mesh",
+				"name": "BodyFrontRight",
+				"userData": {
+					"name": "BodyFrontRight"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "6DF7166E-DDDE-4899-A07F-8967F2BE0287",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "95408704-A6A3-455B-80FC-D73F8D53CEA3",
+				"type": "Mesh",
+				"name": "BodyRearRight",
+				"userData": {
+					"name": "BodyRearRight"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "88861FA4-0979-44A7-A781-AED7D751419C",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "153FF016-4111-4B15-A9CB-60F69BADCF2D",
+				"type": "Mesh",
+				"name": "BodyRear",
+				"userData": {
+					"name": "BodyRear"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "1A5967C6-724B-4BE3-88C4-C401C80D2306",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "41B6A1FA-7868-4DEB-8BB7-7AD7AA4CDA69",
+				"type": "Mesh",
+				"name": "BodyRearLeft",
+				"userData": {
+					"name": "BodyRearLeft"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "4800C823-E4F9-49D7-88FC-8CD004043D05",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "C61A1BDD-8944-47AE-B059-55A52552F419",
+				"type": "Mesh",
+				"name": "Roof",
+				"userData": {
+					"name": "Roof"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "DFEA98A5-4EFE-4587-B4AA-D878214B396E",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "7F2B2603-9289-41D3-8508-0DB30F323A68",
+				"type": "Mesh",
+				"name": "Bonnet",
+				"userData": {
+					"name": "Bonnet"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "CA732AF3-7096-42A5-B04A-632EC614CFE8",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "8F453513-D973-4F97-A6B1-C917643293B2",
+				"type": "Mesh",
+				"name": "Grill",
+				"userData": {
+					"name": "Grill"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "AFC0E99E-8377-4DB4-95B7-F38147263116",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "8432DAE7-A460-4007-90D8-11A87D4D8C11",
+				"type": "Mesh",
+				"name": "HeadLightLeft",
+				"userData": {
+					"name": "HeadLightLeft"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "1DAA8498-B25B-4757-87D9-E04CCA844C7E",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "35D15123-5C4E-431C-B911-72C33079DD47",
+				"type": "Mesh",
+				"name": "HeadLightRight",
+				"userData": {
+					"name": "HeadLightRight"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "F47173C8-6352-4285-B7AC-C5638435AE24",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "543EC0AE-E659-4F1A-ADD4-A3C3F0ABDB21",
+				"type": "Mesh",
+				"name": "TailLightRight",
+				"userData": {
+					"name": "TailLightRight"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "0C5FD1C1-D9EF-4309-BB4C-3FF625430A6D",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "E6521891-3329-4729-B9EE-6385C6378B4F",
+				"type": "Mesh",
+				"name": "TailLightLeft",
+				"userData": {
+					"name": "TailLightLeft"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "49FBCE3F-D268-433B-B95C-F8189CC25A6D",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "B3431913-CD65-4BBB-B952-C2F53794C055",
+				"type": "Mesh",
+				"name": "WindowBack",
+				"userData": {
+					"name": "WindowBack"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "B08D12AD-1978-40CD-855A-F36286A3286C",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "86468AE3-4F3E-449E-94AB-4B97A0BF94D9",
+				"type": "Mesh",
+				"name": "Windshield",
+				"userData": {
+					"name": "Windshield"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "49DE712A-D169-42AE-9819-96685D49DC68",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "EDEC0C38-F52C-4E9B-9E63-280C16737B1C",
+				"type": "Mesh",
+				"name": "MirrorLeft",
+				"userData": {
+					"name": "MirrorLeft"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "55414CAB-35D0-47D9-ADAA-DC44037F1B1C",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "57EAB53B-C9D8-4443-9880-F97437A3D3AB",
+				"type": "Mesh",
+				"name": "MirrorRight",
+				"userData": {
+					"name": "MirrorRight"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "C49D76BA-A6BA-47F5-9031-8987092A2277",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "FB31CB22-C6BC-40EA-B36B-BE11707EC8C3",
+				"type": "Mesh",
+				"name": "DoorFrontLeft",
+				"userData": {
+					"name": "DoorFrontLeft"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "0B7B5075-F216-457B-8463-E2AC9440529D",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "7B97A76F-7B7B-4A11-AE3D-E6E993CBA631",
+				"type": "Mesh",
+				"name": "DoorFrontRight",
+				"userData": {
+					"name": "DoorFrontRight"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "9BEFEAFF-4A13-47C7-99A7-C094A06E2903",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "1CF88ED6-8887-4E23-84EB-8917CD2C1152",
+				"type": "Mesh",
+				"name": "WindowFrontRight",
+				"userData": {
+					"name": "WindowFrontRight"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "07582794-667E-47A4-93CA-7E5929371369",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "6480E377-6C62-4E13-A1ED-B2D4F73FF23C",
+				"type": "Mesh",
+				"name": "WindowFrontLeft",
+				"userData": {
+					"name": "WindowFrontLeft"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "393F9FAC-CA15-4120-AC12-E5DA8205333B",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "1EA13367-DDD7-44B4-9121-365BCA55B70A",
+				"type": "Mesh",
+				"name": "WindowRearLeft",
+				"userData": {
+					"name": "WindowRearLeft"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "6A7407D4-0715-4C6B-92C7-B876BAFDFAC0",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "0F5A5256-7EBA-4BB6-B5D8-BB66D07ECAB8",
+				"type": "Mesh",
+				"name": "WindowRearRight",
+				"userData": {
+					"name": "WindowRearRight"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "3A28D2AB-1302-4162-AD6B-EA1F7D968243",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "E04003AE-687F-45A2-B5B5-46D7337AD86C",
+				"type": "Mesh",
+				"name": "DoorRearLeft",
+				"userData": {
+					"name": "DoorRearLeft"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "74D82166-661D-4596-AC19-5126F4A40ACA",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "080F1D3F-C0DF-4DB3-959E-B7A7009DAC94",
+				"type": "Mesh",
+				"name": "DoorRearRight",
+				"userData": {
+					"name": "DoorRearRight"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "8192BBAC-3797-49FA-8378-6A54FD6D6450",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
+				"uuid": "F6E84248-8686-459F-B777-E46BC89F2C10",
+				"type": "Mesh",
+				"name": "WheelFrontLeft",
+				"userData": {
+					"name": "WheelFrontLeft"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "C063ABE4-2581-4B26-B2B3-911B6466D50F",
+				"material": "7776AEBF-D2D7-4B09-A9E8-9C8264F91139"
+			},
+			{
+				"uuid": "56F48C50-CFD6-4427-98E0-803B380CEA00",
+				"type": "Mesh",
+				"name": "WheelRearLeft",
+				"userData": {
+					"name": "WheelRearLeft"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "D474F67E-95D0-4616-A86E-E2344493B480",
+				"material": "7776AEBF-D2D7-4B09-A9E8-9C8264F91139"
+			},
+			{
+				"uuid": "1E783034-F8CD-41C8-B825-6D20D3643982",
+				"type": "Mesh",
+				"name": "WheelRearRight",
+				"userData": {
+					"name": "WheelRearRight"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "7824DB88-2AE2-461D-B26A-99CC1B25505C",
+				"material": "7776AEBF-D2D7-4B09-A9E8-9C8264F91139"
+			},
+			{
+				"uuid": "8673FB61-3D79-417C-B05D-D3C5771C3B85",
+				"type": "Mesh",
+				"name": "WheelArchRearLeft",
+				"userData": {
+					"name": "WheelArchRearLeft"
+				},
+				"layers": 1,
+				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+				"geometry": "ADD6DEC7-5AE0-49B6-9E35-37BEF9ABE0F4",
+				"material": "AB725A9F-0214-4F3B-AF2C-88DC70D5325F"
+			},
+			{
 				"uuid": "E9584734-80A2-48F1-B0E1-CE3DE12F813C",
 				"type": "Mesh",
 				"name": "WheelFrontRight",
