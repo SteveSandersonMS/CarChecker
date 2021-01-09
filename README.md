@@ -18,7 +18,7 @@ This is a great sample which has a lot of Blazor + ASP.NET integrations such as:
 ## Deploy to Azure
 You can create the resource (Free SKU App Service) in Azure quickly by clicking below and then can use Visual Studio to select the App Service and deploy the code to it later.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Ftimheuer%2FCarChecker%2Fmaster%2Fdeploy.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FSteveSandersonMS%2FCarChecker%2Fmaster%2Fdeploy.json)
 
 ### Remarks
 This sample makes use of a preview package for Validation.
